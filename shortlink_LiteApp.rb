@@ -1,7 +1,9 @@
 require 'sinatra'
 require 'redis'
+require 'uri'
 
-redis = Redis.new(:host => '127.0.0.1', :port => 6380)
+uri = URI.parse(ENV[REDIS4YOU_URL])
+redis = Redis.new(:host => uri.host, :port => uri.port, :db => 0)
 
 helpers do
   include Rack::Utils
