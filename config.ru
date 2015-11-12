@@ -1,2 +1,2 @@
-require './shortlink_LiteApp.ru'
+require './shortlink_LiteApp.rb'
 run Sinatra::Application
