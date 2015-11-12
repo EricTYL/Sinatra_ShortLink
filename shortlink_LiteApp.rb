@@ -3,10 +3,7 @@ require 'redis'
 require 'uri'
 
 uri = URI.parse(ENV["REDIS4YOU_URL"])
-redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password, :db => 0)
-if redis
-  puts redis
-end
+redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 
 helpers do
   include Rack::Utils
