@@ -2,7 +2,7 @@ require 'sinatra'
 require 'redis'
 require 'uri'
 
-uri = URI.parse(ENV[REDIS4YOU_URL])
+uri = URI.parse(ENV["REDIS4YOU_URL"])
 redis = Redis.new(:host => uri.host, :port => uri.port, :db => 0)
 if redis
   puts redis
