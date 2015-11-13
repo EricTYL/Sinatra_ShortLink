@@ -20,7 +20,7 @@ end
 
 post '/' do
   if params[:url] && !params[:url].empty?
-    @shortcode = random_string 7
+    @shortcode = random_string 4
     redis.setnx "links:#{@shortcode}", params[:url]
   end
   erb :index
